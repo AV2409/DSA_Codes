@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/akshanshvij/Documents/GitHub/c++/arrays/rotate'
+relocations:
+  - { offsetInCU: 0x1683F, offset: 0x1683F, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x619B8, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x16EAA, offset: 0x16EAA, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_rotate.cpp, symObjAddr: 0x364, symBinAddr: 0x100003E4C, symSize: 0x1C }
+  - { offsetInCU: 0x16ED1, offset: 0x16ED1, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0ii, symObjAddr: 0x304, symBinAddr: 0x100003DEC, symSize: 0x60 }
+  - { offsetInCU: 0x16EE9, offset: 0x16EE9, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x280, symBinAddr: 0x100003D88, symSize: 0x64 }
+  - { offsetInCU: 0x16F2F, offset: 0x16F2F, size: 0x8, addend: 0x0, symName: __Z6rotatePiii, symObjAddr: 0x7C, symBinAddr: 0x100003B84, symSize: 0x204 }
+  - { offsetInCU: 0x17018, offset: 0x17018, size: 0x8, addend: 0x0, symName: __Z5printPii, symObjAddr: 0x0, symBinAddr: 0x100003B08, symSize: 0x7C }
+...

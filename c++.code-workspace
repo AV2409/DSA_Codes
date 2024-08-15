@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cph.general.defaultLanguage": "cpp",
+		"files.autoSave": "onFocusChange"
+	}
+}
