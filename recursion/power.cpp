@@ -13,6 +13,6 @@ long long pow(int n,int p){
 
 int main(){
     
-    cout<<pow(3,420)<<endl;
+    cout<<pow(2,10)<<endl;
     
 }
