@@ -96,7 +96,7 @@ string string_rev(string &str)
 }
 int main()
 {
-    string str = "akshansh";
+    string str = "DataStructure";
     str = string_rev(str);
     cout << str;
 

@@ -1,6 +1,26 @@
-Valid
-Valid
-Invalid
-Valid
-Valid
-Invalid
+Enter root node data: 
+Enter data for left of 1
+Enter data for right of 1
+Enter data for left of 2
+Enter data for right of 2
+Enter data for left of 5
+Enter data for right of 5
+Enter data for left of 7
+Enter data for right of 7
+Enter data for left of 3
+Enter data for right of 3
+Enter data for left of 10
+Enter data for right of 10
+Enter data for left of 11
+Enter data for right of 11
+1 
+2 5 
+7 
+3 
+10 
+11 
+
+2 1 7 10 11 3 5 
+1 2 5 7 3 10 11 
+2 11 10 3 7 5 1 
+2 1 7 10 11 3 5 

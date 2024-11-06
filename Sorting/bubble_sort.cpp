@@ -26,29 +26,31 @@ void bubble_sort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
-        bool swapped=false;
+        bool swapped = false;
         for (int j = 0; j < n - i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
             {
                 swap(arr[j], arr[j + 1]);
-                swapped=true;
+                swapped = true;
             }
         }
-        if (swapped==false) break;
+        if (swapped == false)
+            break;
     }
 }
 
 void bubble_sort_rec(int arr[], int n)
 {
-    if(n==1) return;
+    if (n == 1)
+        return;
 
-
-    for(int j=0;j<n-1;j++){
-        if(arr[j]>arr[j+1]) swap(arr[j],arr[j+1]);
-
+    for (int j = 0; j < n - 1; j++)
+    {
+        if (arr[j] > arr[j + 1])
+            swap(arr[j], arr[j + 1]);
     }
-    bubble_sort_rec(arr,--n);
+    bubble_sort_rec(arr, --n);
 }
 
 int main()

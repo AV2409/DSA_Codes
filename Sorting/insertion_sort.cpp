@@ -1,69 +1,66 @@
 #include <iostream>
 using namespace std;
 
-void insertion_sort(int arr[], int n)
-{
+// void insertion_sort(int arr[], int n)
+// {
 
-    for (int i = 1; i < n; i++)
-    {
-        int j = i;
-        while (j > 0)
-        {
-            if (arr[j] < arr[j - 1])
-            {
-                swap(arr[j], arr[j - 1]);
-                j--;
-            }
+//     for (int i = 1; i < n; i++)
+//     {
+//         int j = i;
+//         while (j > 0)
+//         {
+//             if (arr[j] < arr[j - 1])
+//             {
+//                 swap(arr[j], arr[j - 1]);
+//                 j--;
+//             }
 
-            else
-                break;
-        }
-    }
+//             else
+//                 break;
+//         }
+//     }
 
-    for (int i = 0; i < n; i++)
-    {
-        int j;
-        for (j = i; j > 0; j--)
-        {
-            if (arr[j - 1] > arr[j])
-            {
-                swap(arr[j - 1], arr[j]);
-            }
+//     for (int i = 0; i < n; i++)
+//     {
+//         int j;
+//         for (j = i; j > 0; j--)
+//         {
+//             if (arr[j - 1] > arr[j])
+//             {
+//                 swap(arr[j - 1], arr[j]);
+//             }
 
-            else
-                break;
-        }
-    }
+//             else
+//                 break;
+//         }
+//     }
 
-    for (int i = 0; i < n; i++)
-    {
-        int j = i;
-        while (j > 0 && arr[j] < arr[j - 1])
-        {
+//     for (int i = 0; i < n; i++)
+//     {
+//         int j = i;
+//         while (j > 0 && arr[j] < arr[j - 1])
+//         {
 
-            swap(arr[j], arr[j - 1]);
-            j--;
-        }
-    }
-}
+//             swap(arr[j], arr[j - 1]);
+//             j--;
+//         }
+//     }
+// }
 
 void insertion_sort_rec(int arr[], int n)
 {
     if (n == 1 || n == 0)
         return;
 
-    insertion_sort_rec(arr, --n);
-    int j = n - 1;
-    while (j > 0)
+    insertion_sort_rec(arr, n-1);
+    int j = n-1;
+    int temp=arr[j];
+    while (j > 0 &&arr[j-1] > temp)
     {
-        if (arr[j] < arr[j - 1])
-            swap(arr[j], arr[j - 1]);
-
-        else
-            break;
-
+        arr[j]=arr[j-1];
         j--;
     }
+    arr[j]=temp;
 }
 
 int main()

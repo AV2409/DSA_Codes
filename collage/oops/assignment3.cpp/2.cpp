@@ -22,7 +22,7 @@ public:
         cout << this->a;
     }
 
-    friend void swap(A aa, B bb);
+    friend void swap(A &aa, B &bb);
 };
 
 class B
@@ -45,10 +45,10 @@ public:
         cout << this->b;
     }
 
-    friend void swap(A aa, B bb);
+    friend void swap(A &aa, B &bb);
 };
 
-void swap(A aa, B bb)
+void swap(A &aa, B &bb)
 {
     int temp = aa.a;
     aa.a = bb.b;

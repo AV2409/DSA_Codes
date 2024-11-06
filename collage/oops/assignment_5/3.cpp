@@ -61,7 +61,7 @@ class child1 : private parent
     int b;
 
 public:
-    child()
+    child1()
     {
         b = 5;
         cout << "child constructor" << endl;
@@ -80,7 +80,7 @@ public:
     {
         return a1;
     }
-    ~child()
+    ~child1()
     {
         b = 5;
         cout << "child destructorr" << endl;
