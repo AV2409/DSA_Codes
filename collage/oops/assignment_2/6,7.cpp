@@ -6,6 +6,10 @@ class demo
 public:
     static int i;
     void display();
+    static void print()
+    {
+        cout << i << endl;
+    }
 };
 int x = 100;
 int demo::i = 1;
@@ -16,7 +20,7 @@ void demo::display()
 
 namespace A
 {
-    int x = 0;
+    int y = 0;
     void show()
     {
         cout << "A";
@@ -25,7 +29,7 @@ namespace A
 }
 namespace B
 {
-    int x = 5;
+    int y = 5;
     void show()
     {
         cout << "B";
@@ -38,14 +42,14 @@ int main()
     int x = 50;
     cout << x << endl;
     cout << ::x << endl;
-
+    demo::print();
     // std::cout << demo::i << endl;
 
-    cout << A::x << endl;
-    cout << B::x << endl;
+    cout << A::y << endl;
+    cout << B::y << endl;
     show();
     cout << endl
-         << x << endl;
+         << y << endl;
 
     A::show();
     cout << endl;

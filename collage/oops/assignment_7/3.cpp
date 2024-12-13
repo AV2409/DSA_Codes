@@ -8,20 +8,31 @@ private:
 
 public:
     // Constructor
-    Distance(int f, int i) : feet(f), inch(i) {}
+    Distance(int f = 0, int i = 0) : feet(f), inch(i) {}
 
     // Overload unary minus (-) operator
-    Distance operator-()
-    {
-        return Distance(-feet, -inch);
-    }
+    // Distance operator-()
+    // {
+    //     feet = -feet;
+    //     inch = -inch;
+
+    //     return Distance(feet, inch);
+    // }
 
     // Function to display the value
+
+    friend void operator-(Distance &d1);
     void display() const
     {
         cout << feet << " feet,  " << inch << " inches" << endl;
     }
 };
+
+void operator-(Distance &d1)
+{
+    d1.feet = -d1.feet;
+    d1.inch = -d1.inch;
+}
 
 int main()
 {
@@ -29,9 +40,9 @@ int main()
     cout << "Original ";
     num.display();
 
-    Distance negNum = -num; // Using the overloaded unary minus
+    -num; // Using the overloaded unary minus
     cout << "Negated ";
-    negNum.display();
+    num.display();
 
     return 0;
 }

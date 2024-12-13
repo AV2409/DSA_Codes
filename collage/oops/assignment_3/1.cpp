@@ -28,7 +28,7 @@ int main()
     d1.display();
 
     demo *d2 = new demo(10);
-    cout<<endl;
+    cout << endl;
     d2->display();
     return 0;
 }

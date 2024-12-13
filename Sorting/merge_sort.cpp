@@ -28,15 +28,15 @@ void merge(vector<int> &arr, int st, int mid, int end)
         i++;
     }
 
-     while (j <= end)
+    while (j <= end)
     {
         v.push_back(arr[j]);
         j++;
     }
 
-
-    for(i=st;i<=end;i++){
-        arr[i]=v[i-st];
+    for (i = st; i <= end; i++)
+    {
+        arr[i] = v[i - st];
     }
 }
 
@@ -49,24 +49,20 @@ void merge_sort(vector<int> &arr, int start, int end)
 
     merge_sort(arr, start, mid);
     merge_sort(arr, mid + 1, end);
-
-    
-
     merge(arr, start, mid, end);
 }
 
 int main()
 {
-    vector<int> arr={1,5,4,3,2};
+    vector<int> arr = {1, 5, 4, 3, 2};
 
-    
     for (int i = 0; i < 5; i++)
     {
         cout << arr[i] << " ";
     }
     cout << endl;
 
-    merge_sort(arr, 0, 5-1);
+    merge_sort(arr, 0, 5 - 1);
 
     for (int i = 0; i < 5; i++)
     {

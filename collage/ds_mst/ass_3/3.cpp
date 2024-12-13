@@ -77,35 +77,44 @@ public:
     }
 };
 
-bool valid(string &str)
+bool valid(string &s)
 {
-    Stack s1;
-    int n = str.length();
+    stack<int> s1;
+    int n = s.length();
     int i = 0;
+    if ((s[0] == ')') || (s[0] == '}') || (s[0] == ']'))
+    {
+        return 0;
+    }
     while (i < n)
     {
-        if ((str[i] == '(') || (str[i] == '{') || (str[i] == '['))
-        {
-            s1.push(str[i]);
-        }
-        else if ((str[i] == ')') && (s1.peak() == '('))
-        {
-            s1.pop();
-        }
 
-        else if ((str[i] == '}') && (s1.peak() == '{'))
+        if ((s[i] == '(') || (s[i] == '{') || (s[i] == '['))
         {
-            s1.pop();
+            s1.push(s[i]);
         }
-
-        else if ((str[i] == ']') && (s1.peak() == '['))
+        else
         {
-            s1.pop();
+            if (s1.empty())
+            {
+                return false; // If there's no opening bracket for a closing one
+            }
+            char top = s1.top();
+            if ((s[i] == ')' && top == '(') ||
+                (s[i] == '}' && top == '{') ||
+                (s[i] == ']' && top == '['))
+            {
+                s1.pop(); // Matching pair found, pop the stack
+            }
+            else
+            {
+                return false; // Mismatched bracket
+            }
         }
 
         i++;
     }
-    if (s1.isEmpty())
+    if (s1.empty())
     {
         return 1;
     }

@@ -23,36 +23,33 @@ int partition(vector<int> &arr, int st, int end)
     while (i < pivotIndex && j > pivotIndex)
     {
 
-        // while (arr[i] > pivot && arr[j] < pivot)
-        // {
-        //     while (arr[i] <= pivot)
-        //         i++;
-        //     while (arr[j] > pivot)
-        //         j--;
+        while (arr[i] <= pivot)
+            i++;
+        while (arr[j] > pivot)
+            j--;
 
-        //     if (i < pivotIndex && j > pivotIndex)
-        //     {
-        //         swap(arr[i], arr[j]);
-        //         i++;
-        //         j--;
-        //     }
-        // }
-        if (arr[i] > pivot && arr[j] < pivot)
+        if (i < pivotIndex && j > pivotIndex)
         {
             swap(arr[i], arr[j]);
             i++;
             j--;
         }
+        // if (arr[i] > pivot && arr[j] < pivot)
+        // {
+        //     swap(arr[i], arr[j]);
+        //     i++;
+        //     j--;
+        // }
 
-        else if (arr[i] <= pivot)
-        {
-            i++;
-        }
+        // else if (arr[i] <= pivot)
+        // {
+        //     i++;
+        // }
 
-        else if (arr[j] > pivot)
-        {
-            j--;
-        }
+        // else if (arr[j] > pivot)
+        // {
+        //     j--;
+        // }
     }
 
     return pivotIndex;
@@ -60,7 +57,7 @@ int partition(vector<int> &arr, int st, int end)
 
 void solve(vector<int> &arr, int start, int end)
 {
-    
+
     if (start >= end)
         return;
 
@@ -72,8 +69,8 @@ void solve(vector<int> &arr, int start, int end)
 
 int main()
 {
-    vector<int> arr = {4, 2, 5,1,3};
-    //4 1 3 9 7
+    vector<int> arr = {4, 2, 5, 1, 3};
+    // 4 1 3 9 7
 
     for (int i = 0; i < 5; i++)
     {

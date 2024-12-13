@@ -21,19 +21,19 @@ public:
 void calculate(Process p[], int n)
 {
 
-    int currentTime = 0; // Current time tracker
-    int completed = 0;   // Number of completed processes
-    int total_tat = 0;   // Total turnaround time
-    int total_wt = 0;    // Total waiting time
+    int currentTime = 0;
+    int completed = 0;
+    int total_tat = 0;
+    int total_wt = 0;
+    vector<int> seq;
 
-    vector<bool> isCompleted(n, false); // Track which processes are completed
+    vector<bool> isCompleted(n, false);
 
     while (completed < n)
     {
         int idx = -1;
         int shortest_bt = 999999;
 
-        // Select the process with the shortest burst time that has arrived
         for (int i = 0; i < n; i++)
         {
             if ((p[i].at <= currentTime) && (!isCompleted[i]) && (p[i].bt < shortest_bt))
@@ -45,24 +45,28 @@ void calculate(Process p[], int n)
 
         if (idx != -1)
         {
-            // Process found, so we execute it
             currentTime += p[idx].bt;
             p[idx].ct = currentTime;
-            p[idx].tat = p[idx].ct - p[idx].at; // Turnaround time
-            p[idx].wt = p[idx].tat - p[idx].bt; // Waiting time
+            p[idx].tat = p[idx].ct - p[idx].at;
+            p[idx].wt = p[idx].tat - p[idx].bt;
 
             total_tat += p[idx].tat;
             total_wt += p[idx].wt;
             isCompleted[idx] = true;
             completed++;
+            seq.push_back(idx);
         }
         else
         {
-            // If no process has arrived, increment the current time
             currentTime = p[completed].at;
         }
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        cout << "P" << seq[i] + 1 << "\t";
+    }
+    cout << endl;
     cout << "Process\t  Arrival\t  Burst\t  Completion\t  TurnAround\t  Waiting\n";
     for (int i = 0; i < n; i++)
     {

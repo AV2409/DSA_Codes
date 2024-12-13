@@ -18,15 +18,19 @@ public:
     }
 };
 
-void calculate(Process p[], int n)
+void fcfs(Process p[], int n)
 {
-    int total = 0;
+    int curr = 0;
     int t_tat = 0;
     int t_wait = 0;
     for (int i = 0; i < n; i++)
     {
-        total += p[i].bt;
-        p[i].ct = total;
+        if (p[i].at > curr)
+        {
+            curr = p[i].at;
+        }
+        curr += p[i].bt;
+        p[i].ct = curr;
         p[i].tat = p[i].ct - p[i].at;
         p[i].wt = p[i].tat - p[i].bt;
         t_tat += p[i].tat;
@@ -53,7 +57,7 @@ int main()
     p[1] = Process(2, 1, 1);
     p[2] = Process(3, 2, 7);
     int n = 3;
-    calculate(p, n);
+    fcfs(p, n);
 
     return 0;
 }

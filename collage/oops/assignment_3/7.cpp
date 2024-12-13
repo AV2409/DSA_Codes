@@ -21,15 +21,15 @@ public:
         cout << this->a;
     }
 
-    demo update_by_value(demo d)
+    void update_by_value(demo d)
     {
         d.a++;
-        return d;
+        // return d;
     }
-    demo update_by_refrence(demo &d)
+    void update_by_refrence(demo &d)
     {
         d.a++;
-        return d;
+        // return d;
     }
 };
 
@@ -40,11 +40,12 @@ int main()
 
     cout << endl
          << "pass by value: ";
-         
+
     d1.update_by_value(d1);
     d1.display();
     d1.update_by_refrence(d1);
-    cout<<endl<<"pass by refrence: ";
+    cout << endl
+         << "pass by refrence: ";
     d1.display();
     return 0;
 }

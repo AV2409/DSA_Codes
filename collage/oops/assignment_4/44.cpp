@@ -64,7 +64,7 @@ int main()
     demo *d = new demo[5];
     for (int i = 0; i < 5; i++)
     {
-        cout << d[1].get() << " ";
+        cout << d[i].get() << " ";
     }
 
     cout << endl;

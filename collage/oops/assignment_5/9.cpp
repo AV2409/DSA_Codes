@@ -1,34 +1,53 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-class bank_manager;
-class bank_account
+
+class Base
 {
-protected:
-    int balance;
+public:
+    char make;
+    string model;
+    int year;
+
+    Base(char m, string mm, int y)
+    {
+        make = m;
+        model = mm;
+        year = y;
+    }
+};
+class Truck : public Base
+{
 
 public:
-    int return_balance() const
+    int load;
+    Truck(char m, string mm, int y, int l) : Base(m, mm, y)
     {
-        return balance;
+        load = l;
     }
 };
 
-class savings_account : public bank_account
+class RTruck : public Truck
 {
-protected:
-    string saving_acc_no;
-};
+    char temp_control;
 
-class current_account : public savings_account
-{
-protected:
-    string acc_no;
+public:
+    RTruck(char m, string mm, int y, int l, char t) : Truck(m, mm, y, l)
+    {
+        temp_control = t;
+    }
 
-    friend class bank_manager;
+    void display()
+    {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+        cout << "Load: " << load << endl;
+        cout << "Temperature Control: " << temp_control << endl;
+    }
 };
 
 int main()
 {
-
-    return 0;
+    RTruck rt('a', "VXI", 2019, 1000, 'A');
+    rt.display();
 }

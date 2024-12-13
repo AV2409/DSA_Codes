@@ -22,7 +22,7 @@ class B : public demo
 public:
     static void display()
     {
-        cout << "After overiding";
+        cout << "After overiding\n";
     }
 };
 int main()

@@ -11,7 +11,7 @@ public:
         cout << "Base: display() with no arguments" << endl;
     }
 
-    void display1(int x)
+    void display(int x)
     {
         cout << "Base: display() with int argument: " << x << endl;
     }
@@ -34,10 +34,9 @@ int main()
 
     // Call the redefined function in Derived
     d.display(); // Calls Derived::display()
-
     // The following line will cause a compile-time error
     // because the int version of display() from Base is hidden
-    // d.display(10); // Error: no matching function
+    d.Base::display(10); // Error: no matching function
 
     // To access the hidden Base class functions, we use the scope resolution operator
     // Base::display(10); // Calls Base::display(int)
