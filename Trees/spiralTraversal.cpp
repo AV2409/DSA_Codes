@@ -94,17 +94,63 @@ vector<int> spiralTraversal(Node *root)
     return result;
 }
 
+vector<int> spiralTraversal2(Node *root)
+{
+    vector<int> ans;
+    if (root == NULL)
+    {
+        return ans;
+    }
+
+    stack<Node *> st1;
+    stack<Node *> st2;
+
+    st1.push(root);
+
+    while (!st1.empty() || !st2.empty())
+    {
+        while (!st1.empty())
+        {
+            Node *temp = st1.top();
+            st1.pop();
+            ans.push_back(temp->data);
+            if (temp->right)
+            {
+                st2.push(temp->right);
+            }
+            if (temp->left)
+            {
+                st2.push(temp->left);
+            }
+        }
+        while (!st2.empty())
+        {
+            Node *temp = st2.top();
+            st2.pop();
+            ans.push_back(temp->data);
+            if (temp->left)
+            {
+                st1.push(temp->left);
+            }
+            if (temp->right)
+            {
+                st1.push(temp->right);
+            }
+        }
+    }
+    return ans;
+}
+
 int main()
 {
     Node *root = buildTree(root);
-    // 1 2 5 -1 -1 7 -1 -1 3 10 -1 -1 11 -1 -1
-    vector<int> x = spiralTraversal(root);
+    // 1 2 4 8 16 -1 -1 -1 9 17 -1 -1 18 -1 -1 5 10 -1 -1 11 -1 19 -1 -1 3 6 12 -1 -1 13 20 -1 -1 21 -1 -1 7 14 -1 -1 15 22 -1 -1 23 -1 -1
+    vector<int> x = spiralTraversal2(root);
     cout << endl;
     for (int i = 0; i < x.size(); i++)
     {
         cout << x[i] << " ";
     }
 
-    // round robin code?
     return 0;
 }

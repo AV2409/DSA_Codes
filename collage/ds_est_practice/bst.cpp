@@ -291,7 +291,6 @@ void deleteFromBST(TreeNode *&root, int key)
 
 int main()
 {
-
     TreeNode *t1 = NULL;
     insert(t1, 50);
     insert(t1, 34);
