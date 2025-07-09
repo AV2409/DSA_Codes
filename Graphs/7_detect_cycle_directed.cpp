@@ -40,9 +40,12 @@ bool isCyclic_DFS(int V, vector<vector<int>> &edges)
 
     for (int i = 0; i < V; i++)
     {
-        if (dfs_path(i, -1, adj, visited, path))
+        if (!visited[i])
         {
-            return true;
+            if (dfs_path(i, -1, adj, visited, path))
+            {
+                return true;
+            }
         }
     }
     return false;
